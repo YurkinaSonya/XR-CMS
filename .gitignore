@@ -1,0 +1,210 @@
+###############################################################################
+# Общие OS файлы/мусор
+###############################################################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux/DE
+.directory
+.fuse_hidden*
+.nfs*
+
+###############################################################################
+# IDE / редакторы
+###############################################################################
+# IntelliJ IDEA / Rider / PhpStorm / и пр. JetBrains
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+.history/
+.code-workspace
+
+# Visual Studio (если вдруг генерируются решения)
+.vs/
+*.vcxproj*
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# Eclipse (иногда встречается в Java)
+.project
+.classpath
+.settings/
+.factorypath
+.apt_generated/
+.springBeans
+
+###############################################################################
+# Секреты и локальная конфигурация
+###############################################################################
+*.env
+*.env.*          # .env.local, .env.dev и т.п.
+.envrc
+*.secret
+*.keystore
+*.jks
+*.p12
+*.pem
+*.crt
+*.key
+*.pfx
+*.bak
+*.swp
+*.swo
+
+###############################################################################
+# Логи / временные файлы
+###############################################################################
+*.log
+logs/
+*.tmp
+tmp/
+temp/
+*.pid
+*.seed
+*.orig
+
+###############################################################################
+# Java / Spring Boot (Maven & Gradle)
+###############################################################################
+# Компиляция/артефакты
+target/
+build/
+classes/
+bin/
+generated/
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle/
+**/build/
+# Кэш-папки IDE
+.gradle-cache/
+# Не игнорировать wrapper!
+!gradlew
+!gradlew.bat
+!gradle/wrapper/
+!gradle/wrapper/**
+
+# Maven
+.mvn/timing.properties
+# Не игнорировать wrapper!
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/
+!.mvn/wrapper/**
+
+# Тестовые отчёты
+surefire-reports/
+failsafe-reports/
+jacoco.exec
+jacoco-report/
+test-output/
+hs_err_pid*
+
+# Пакеты / артефакты (если не публикуете их в Git)
+*.jar
+*.war
+*.ear
+
+###############################################################################
+# Docker / Compose (при необходимости)
+###############################################################################
+docker-data/
+docker-volumes/
+*.tar
+*.gz
+
+###############################################################################
+# Unity
+###############################################################################
+# Генерируемые Unity каталоги
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+# Кэши пакетов и артефакты
+Packages/PackageCache/
+# Временный экспорт / кэш редактора
+/[Aa]ssets/AssetStoreTools*
+/[Aa]ssets/Plugins/Editor/JetBrains*
+# Кэш сцен/временные
+/[Aa]ssets/**/[Pp]lugin~/
+/[Aa]ssets/**/[Ss]amples~/
+/[Aa]ssets/**/[Tt]ests~/
+
+# Проектные файлы и решения, генерируемые Unity/IDE
+*.csproj
+*.unityproj
+*.sln
+*.sln.dotSettings
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Системы контроля версий внутри Assets (на всякий случай)
+*.meta~     # временные варианты .meta
+
+# Плейер/экспортные сборки
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad/
+
+# Кэш платформенных SDK (если собираете под Android/iOS)
+.gradle/                # если Gradle внутри Unity Android export
+ExportedObj/
+Consulo/
+# iOS
+build-iOS/
+Pods/
+Podfile.lock
+
+# Crash/Profiler
+sysinfo.txt
+
+###############################################################################
+# Медиа/большие файлы (опционально; лучше через Git LFS)
+###############################################################################
+*.psd
+*.tga
+*.exr
+*.wav
+*.mp4
+*.mov
+*.avi
+*.zip
+*.rar
+*.7z
+# Рекомендация: добавьте эти типы в Git LFS вместо игнора, если нужны в репо.
+# Пример .gitattributes:
+# *.psd filter=lfs diff=lfs merge=lfs -text
+# *.wav filter=lfs diff=lfs merge=lfs -text
