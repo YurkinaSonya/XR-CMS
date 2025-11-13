@@ -23,8 +23,14 @@ public class PatAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String presented = (String) authentication.getCredentials();
-        // TODO: prefix
+        String presented = (authentication.getCredentials() == null)
+                ? ""
+                : authentication.getCredentials().toString();
+
+        presented = presented.replaceFirst("^[Bb]earer\\s+", "").trim();
+        if (presented.isEmpty()) {
+            throw new BadCredentialsException("Empty token");
+        }
         for (UserPat pat : patRepo.findAllNonExpired()) {
             if (pat.isActiveNow() && encoder.matches(presented, pat.getSecretHash())) {
                 User u = pat.getUser();

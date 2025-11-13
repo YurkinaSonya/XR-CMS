@@ -17,6 +17,7 @@ import java.security.SecureRandom;
 import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
@@ -45,10 +46,11 @@ public class PatService {
     }
 
     public List<PatInfo> listForUser(UUID userId) {
-        return patRepository.findAll().stream()
+        return StreamSupport.stream(patRepository.findAll().spliterator(), false)
                 .filter(p -> p.getUser().getId().equals(userId))
                 .map(p -> new PatInfo(p.getId(), p.getName(), p.getScopes(), p.getCreatedAt(), p.getExpiresAt(), p.getRevokedAt()))
                 .toList();
+
     }
 
     @Transactional

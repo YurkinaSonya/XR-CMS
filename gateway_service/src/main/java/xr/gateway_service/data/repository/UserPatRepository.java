@@ -2,13 +2,14 @@ package xr.gateway_service.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import xr.gateway_service.data.entity.UserPat;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserPatRepository extends JpaRepository<UserPat, UUID> {
+public interface UserPatRepository extends CrudRepository<UserPat, UUID> {
     @Query("select p from UserPat p join fetch p.user u join fetch u.roles r where p.revokedAt is null")
     List<UserPat> findAllActive();
 
